@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App & Church Identity -->
+    <string name="app_name">Бројач причесника</string>
+    <string name="church_title">Црква Свете Тројице</string>
+    <string name="communicants_label">Причесника</string>
+
+    <!-- Main Counter Buttons -->
+    <string name="btn_finish_save">✍  Заврши и упиши</string>
+    <string name="btn_undo">- 1</string>
+    <string name="btn_reset">Поништи</string>
+    <string name="action_chronicle">📖  Летопис</string>
+    <string name="action_back">←  Назад</string>
+
+    <!-- Reset Confirmation Dialog -->
+    <string name="confirm_reset_title">Поништавање бројања</string>
+    <string name="confirm_reset_msg">Да ли сте сигурни да желите да ресетујете тренутни број на 0?</string>
+
+    <!-- Save Dialog -->
+    <string name="dialog_save_title">Упис у Летопис Литургија</string>
+    <string name="label_date">Датум и време</string>
+    <string name="label_feast">Назив Литургије / Празника</string>
+    <string name="label_count">Број причесника</string>
+    <string name="label_notes">Свештенослужитељ / Белешка</string>
+    <string name="label_hint_notes">нпр. протојереј Јован, ђакон Петар...</string>
+    <string name="label_quick_presets">Брзи избор службе:</string>
+    <string name="btn_save">Сачувај у Летопис</string>
+    <string name="btn_cancel">Откажи</string>
+
+    <!-- Chronicle Screen -->
+    <string name="chronicle_title">Летопис причешћених</string>
+    <string name="stats_total_communicants">Укупно причешћених</string>
+    <string name="stats_total_liturgies">Служби</string>
+    <string name="stats_average">Просек по служби</string>
+    <string name="empty_chronicle">Нема забележених Литургија у Летопису</string>
+
+    <!-- Liturgy Feast Presets -->
+    <string name="feast_preset_sunday">Недељна Литургија</string>
+    <string name="feast_preset_feast">Празнична Литургија</string>
+    <string name="feast_preset_slava">Храмовна слава - Света Тројица</string>
+    <string name="feast_preset_presanctified">Пређеосвећена Литургија</string>
+
+    <!-- Chronicle Operations -->
+    <string name="dialog_delete_title">Брисање записа</string>
+    <string name="dialog_delete_msg">Да ли желите да обришете овај запис из Летописа?</string>
+    <string name="btn_delete">Обриши</string>
+    <string name="toast_saved">Запис успешно сачуван у Летопис</string>
+    <string name="toast_deleted">Запис обрисан из Летописа</string>
+</resources>

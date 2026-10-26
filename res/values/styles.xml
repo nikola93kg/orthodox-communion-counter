@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Liturgical Theme for Main and Chronicle Activities -->
+    <style name="LiturgicalTheme" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@color/liturgical_burgundy</item>
+        <item name="android:colorPrimary">@color/liturgical_wine_dark</item>
+        <item name="android:colorPrimaryDark">@color/liturgical_burgundy</item>
+        <item name="android:colorAccent">@color/gold_primary</item>
+        <item name="android:textColorPrimary">@color/parchment</item>
+        <item name="android:textColorSecondary">@color/gold_bright</item>
+        <item name="android:navigationBarColor">@color/liturgical_burgundy</item>
+        <item name="android:statusBarColor">@color/liturgical_burgundy</item>
+        <item name="android:alertDialogTheme">@style/LiturgicalDialogTheme</item>
+    </style>
+
+    <!-- Dialog Theme for Liturgical Chronicle Entry & Confirmations -->
+    <style name="LiturgicalDialogTheme" parent="android:Theme.Material.Dialog">
+        <item name="android:windowBackground">@color/liturgical_wine_dark</item>
+        <item name="android:colorPrimary">@color/liturgical_wine_dark</item>
+        <item name="android:colorPrimaryDark">@color/liturgical_burgundy</item>
+        <item name="android:colorAccent">@color/gold_primary</item>
+        <item name="android:textColorPrimary">@color/parchment</item>
+        <item name="android:textColorSecondary">@color/gold_bright</item>
+        <item name="android:textColor">@color/parchment</item>
+    </style>
+</resources>

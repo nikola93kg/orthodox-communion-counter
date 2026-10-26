@@ -1,0 +1,16 @@
+# Build output
+build/
+bin/
+gen/
+out/
+
+# IDE & OS
+.DS_Store
+*.iml
+.idea/
+.gradle/
+*.class
+
+# Android Keystores
+*.keystore
+*.jks

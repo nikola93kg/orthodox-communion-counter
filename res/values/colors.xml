@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Deep Liturgical Burgundy & Wine Palette -->
+    <color name="liturgical_burgundy">#1C0609</color>
+    <color name="liturgical_wine_dark">#2A080C</color>
+    <color name="liturgical_wine_medium">#380B12</color>
+    <color name="liturgical_wine_light">#58141F</color>
+    <color name="translucent_dark_burgundy">#E61C0609</color>
+    <color name="translucent_wine">#CC2A080C</color>
+
+    <!-- Byzantine Liturgical Gold Palette -->
+    <color name="gold_primary">#D4AF37</color>
+    <color name="gold_bright">#F3E5AB</color>
+    <color name="gold_light">#F7EBB8</color>
+    <color name="gold_border">#8C6D1F</color>
+    <color name="gold_amber">#B8860B</color>
+    <color name="gold_pressed">#A07818</color>
+
+    <!-- Typography & Neutral Parchment -->
+    <color name="parchment">#FDFBF7</color>
+    <color name="parchment_muted">#C8BCAE</color>
+    <color name="parchment_dim">#8E8276</color>
+    <color name="slate_dark">#151112</color>
+    <color name="slate_translucent">#99151112</color>
+
+    <!-- Semantic Accents -->
+    <color name="red_crimson">#8A1C22</color>
+    <color name="red_crimson_pressed">#5E1317</color>
+</resources>

@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_church_watermark"
+    android:keepScreenOn="true">
+
+    <!-- Top Liturgical Header -->
+    <LinearLayout
+        android:id="@+id/header_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="24dp"
+        android:paddingTop="14dp"
+        android:paddingRight="24dp"
+        android:paddingBottom="10dp"
+        android:gravity="center_vertical">
+
+        <!-- Church Title & Date -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_church_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/church_title"
+                android:textColor="@color/gold_bright"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:shadowColor="#80000000"
+                android:shadowDx="2"
+                android:shadowDy="2"
+                android:shadowRadius="3" />
+
+            <TextView
+                android:id="@+id/tv_current_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="Датум"
+                android:textColor="@color/parchment_muted"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <!-- Chronicle Book Button -->
+        <Button
+            android:id="@+id/btn_open_chronicle"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:background="@drawable/border_gold"
+            android:text="@string/action_chronicle"
+            android:textColor="@color/gold_bright"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp" />
+    </LinearLayout>
+
+    <!-- Bottom Controls Area -->
+    <LinearLayout
+        android:id="@+id/bottom_controls"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp"
+        android:paddingBottom="16dp"
+        android:paddingTop="10dp"
+        android:gravity="center_vertical">
+
+        <!-- Undo Button (-1) -->
+        <Button
+            android:id="@+id/btn_undo"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:minWidth="90dp"
+            android:background="@drawable/btn_undo"
+            android:text="@string/btn_undo"
+            android:textColor="@color/gold_bright"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <!-- Main Gold Action Button: Finish & Save to Chronicle -->
+        <Button
+            android:id="@+id/btn_finish_save"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/btn_gold"
+            android:text="@string/btn_finish_save"
+            android:textColor="@color/liturgical_burgundy"
+            android:textSize="19sp"
+            android:textStyle="bold" />
+
+        <!-- Reset Button -->
+        <Button
+            android:id="@+id/btn_reset"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:minWidth="100dp"
+            android:background="@drawable/btn_undo"
+            android:text="@string/btn_reset"
+            android:textColor="@color/parchment_dim"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <!-- Central Massive Tap Counter Area (+1) -->
+    <FrameLayout
+        android:id="@+id/tap_counter_area"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/header_container"
+        android:layout_above="@id/bottom_controls"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="@drawable/border_gold">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="☦"
+                android:textColor="@color/gold_primary"
+                android:textSize="28sp"
+                android:layout_marginBottom="2dp" />
+
+            <!-- Huge Counter Value -->
+            <TextView
+                android:id="@+id/tv_counter_display"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="@color/gold_bright"
+                android:textSize="110sp"
+                android:textStyle="bold"
+                android:shadowColor="#B0000000"
+                android:shadowDx="3"
+                android:shadowDy="4"
+                android:shadowRadius="6" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/communicants_label"
+                android:textColor="@color/parchment"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Додирните било где за бројање (+1)"
+                android:textColor="@color/gold_border"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </FrameLayout>
+
+</RelativeLayout>
