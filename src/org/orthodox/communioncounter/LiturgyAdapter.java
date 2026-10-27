@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.TextView;
 
 import org.orthodox.communioncounter.model.LiturgyRecord;
@@ -13,14 +14,23 @@ import java.util.List;
 
 public class LiturgyAdapter extends BaseAdapter {
 
+    public interface OnRecordActionListener {
+        void onDelete(LiturgyRecord record);
+    }
+
     private final Context context;
     private List<LiturgyRecord> recordList;
     private final LayoutInflater inflater;
+    private OnRecordActionListener actionListener;
 
     public LiturgyAdapter(Context context, List<LiturgyRecord> recordList) {
         this.context = context;
         this.recordList = recordList;
         this.inflater = LayoutInflater.from(context);
+    }
+
+    public void setOnRecordActionListener(OnRecordActionListener listener) {
+        this.actionListener = listener;
     }
 
     public void updateData(List<LiturgyRecord> newRecords) {
@@ -53,12 +63,13 @@ public class LiturgyAdapter extends BaseAdapter {
             holder.tvDate = convertView.findViewById(R.id.tv_record_date);
             holder.tvCount = convertView.findViewById(R.id.tv_record_count);
             holder.tvNotes = convertView.findViewById(R.id.tv_record_notes);
+            holder.btnDelete = convertView.findViewById(R.id.btn_delete_record);
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
 
-        LiturgyRecord record = getItem(position);
+        final LiturgyRecord record = getItem(position);
 
         holder.tvFeast.setText(record.getFeastName());
         String fullDate = (record.getDayName() != null && !record.getDayName().isEmpty())
@@ -75,6 +86,27 @@ public class LiturgyAdapter extends BaseAdapter {
             holder.tvNotes.setVisibility(View.GONE);
         }
 
+        // Click on the trash button
+        holder.btnDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (actionListener != null) {
+                    actionListener.onDelete(record);
+                }
+            }
+        });
+
+        // Long press anywhere on the item card
+        convertView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                if (actionListener != null) {
+                    actionListener.onDelete(record);
+                }
+                return true;
+            }
+        });
+
         return convertView;
     }
 
@@ -83,5 +115,6 @@ public class LiturgyAdapter extends BaseAdapter {
         TextView tvDate;
         TextView tvCount;
         TextView tvNotes;
+        Button btnDelete;
     }
 }

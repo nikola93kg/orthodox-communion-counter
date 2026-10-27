@@ -12,7 +12,7 @@ AAPT2="$BUILD_TOOLS/aapt2"
 D8="$BUILD_TOOLS/d8"
 ZIPALIGN="$BUILD_TOOLS/zipalign"
 APKSIGNER="$BUILD_TOOLS/apksigner"
-KEYSTORE="/tmp/debug.keystore"
+KEYSTORE="$HOME/.android/debug.keystore"
 
 # 1. Clean & prepare build directories
 rm -rf build
@@ -70,7 +70,11 @@ ls -lh build/CommunionCounter.apk
 # 9. Deploy to tablet if connected
 if adb devices | grep -q "411f811418a560e7.*device"; then
     echo "=== Deploying to Galaxy Note 10.1 tablet ==="
-    adb install -r build/CommunionCounter.apk
+    if ! adb install -r build/CommunionCounter.apk; then
+        echo "Updating app signature: reinstalling cleanly..."
+        adb uninstall org.orthodox.communioncounter
+        adb install build/CommunionCounter.apk
+    fi
     echo "=== Launching Communion Counter on tablet ==="
     adb shell am start -n org.orthodox.communioncounter/.MainActivity
 fi
